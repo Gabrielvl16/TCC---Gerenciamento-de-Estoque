@@ -33,13 +33,13 @@
             this.btnCadastrar = new CustomControls.RJControls.RJButton();
             this.btnCancelar = new CustomControls.RJControls.RJButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.txtCEP = new System.Windows.Forms.MaskedTextBox();
             this.txtRG = new System.Windows.Forms.MaskedTextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.mtbTelefone = new System.Windows.Forms.MaskedTextBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.mtbCPF = new System.Windows.Forms.MaskedTextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -47,35 +47,35 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtNome = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.lblNome = new System.Windows.Forms.Label();
-            this.lblCPF = new System.Windows.Forms.Label();
-            this.lblRG = new System.Windows.Forms.Label();
             this.lblNascimento = new System.Windows.Forms.Label();
             this.lblTelefone = new System.Windows.Forms.Label();
             this.lblEmail = new System.Windows.Forms.Label();
             this.lblCEP = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.txtPISPASEP = new System.Windows.Forms.MaskedTextBox();
-            this.txtCarteiraTrabalho = new System.Windows.Forms.MaskedTextBox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.txtSalario = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.dtpAdmissao = new System.Windows.Forms.DateTimePicker();
-            this.cbmStatus = new System.Windows.Forms.ComboBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.cbmDepartamento = new System.Windows.Forms.ComboBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.cbmCargo = new System.Windows.Forms.ComboBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.lblCargo = new System.Windows.Forms.Label();
-            this.lblDepartamento = new System.Windows.Forms.Label();
-            this.lblStatus = new System.Windows.Forms.Label();
+            this.lblNome = new System.Windows.Forms.Label();
+            this.lblCPF = new System.Windows.Forms.Label();
+            this.lblRG = new System.Windows.Forms.Label();
+            this.lblPISPASEP = new System.Windows.Forms.Label();
+            this.lblCarteiraTrabalho = new System.Windows.Forms.Label();
             this.lblAdmissao = new System.Windows.Forms.Label();
             this.lblSalario = new System.Windows.Forms.Label();
-            this.lblCarteiraTrabalho = new System.Windows.Forms.Label();
-            this.lblPISPASEP = new System.Windows.Forms.Label();
+            this.lblStatus = new System.Windows.Forms.Label();
+            this.lblDepartamento = new System.Windows.Forms.Label();
+            this.lblCargo = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.cbmCargo = new System.Windows.Forms.ComboBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.cbmDepartamento = new System.Windows.Forms.ComboBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.cbmStatus = new System.Windows.Forms.ComboBox();
+            this.dtpAdmissao = new System.Windows.Forms.DateTimePicker();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.txtSalario = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.txtCarteiraTrabalho = new System.Windows.Forms.MaskedTextBox();
+            this.txtPISPASEP = new System.Windows.Forms.MaskedTextBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -182,6 +182,15 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Dados pessoais";
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(385, 27);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(25, 15);
+            this.label5.TabIndex = 16;
+            this.label5.Text = "RG:";
+            // 
             // txtCEP
             // 
             this.txtCEP.Location = new System.Drawing.Point(60, 94);
@@ -230,15 +239,6 @@
             this.mtbTelefone.Name = "mtbTelefone";
             this.mtbTelefone.Size = new System.Drawing.Size(98, 23);
             this.mtbTelefone.TabIndex = 17;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(385, 27);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(25, 15);
-            this.label5.TabIndex = 16;
-            this.label5.Text = "RG:";
             // 
             // mtbCPF
             // 
@@ -298,45 +298,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Nome:";
             // 
-            // lblNome
-            // 
-            this.lblNome.AutoSize = true;
-            this.lblNome.BackColor = System.Drawing.Color.Transparent;
-            this.lblNome.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
-            this.lblNome.ForeColor = System.Drawing.Color.Crimson;
-            this.lblNome.Location = new System.Drawing.Point(237, 17);
-            this.lblNome.Name = "lblNome";
-            this.lblNome.Size = new System.Drawing.Size(17, 21);
-            this.lblNome.TabIndex = 51;
-            this.lblNome.Text = "*";
-            this.lblNome.Visible = false;
-            // 
-            // lblCPF
-            // 
-            this.lblCPF.AutoSize = true;
-            this.lblCPF.BackColor = System.Drawing.Color.Transparent;
-            this.lblCPF.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
-            this.lblCPF.ForeColor = System.Drawing.Color.Crimson;
-            this.lblCPF.Location = new System.Drawing.Point(377, 16);
-            this.lblCPF.Name = "lblCPF";
-            this.lblCPF.Size = new System.Drawing.Size(17, 21);
-            this.lblCPF.TabIndex = 52;
-            this.lblCPF.Text = "*";
-            this.lblCPF.Visible = false;
-            // 
-            // lblRG
-            // 
-            this.lblRG.AutoSize = true;
-            this.lblRG.BackColor = System.Drawing.Color.Transparent;
-            this.lblRG.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
-            this.lblRG.ForeColor = System.Drawing.Color.Crimson;
-            this.lblRG.Location = new System.Drawing.Point(533, 17);
-            this.lblRG.Name = "lblRG";
-            this.lblRG.Size = new System.Drawing.Size(17, 21);
-            this.lblRG.TabIndex = 53;
-            this.lblRG.Text = "*";
-            this.lblRG.Visible = false;
-            // 
             // lblNascimento
             // 
             this.lblNascimento.AutoSize = true;
@@ -389,6 +350,281 @@
             this.lblCEP.Text = "*";
             this.lblCEP.Visible = false;
             // 
+            // lblNome
+            // 
+            this.lblNome.AutoSize = true;
+            this.lblNome.BackColor = System.Drawing.Color.Transparent;
+            this.lblNome.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            this.lblNome.ForeColor = System.Drawing.Color.Crimson;
+            this.lblNome.Location = new System.Drawing.Point(237, 17);
+            this.lblNome.Name = "lblNome";
+            this.lblNome.Size = new System.Drawing.Size(17, 21);
+            this.lblNome.TabIndex = 51;
+            this.lblNome.Text = "*";
+            this.lblNome.Visible = false;
+            // 
+            // lblCPF
+            // 
+            this.lblCPF.AutoSize = true;
+            this.lblCPF.BackColor = System.Drawing.Color.Transparent;
+            this.lblCPF.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            this.lblCPF.ForeColor = System.Drawing.Color.Crimson;
+            this.lblCPF.Location = new System.Drawing.Point(377, 16);
+            this.lblCPF.Name = "lblCPF";
+            this.lblCPF.Size = new System.Drawing.Size(17, 21);
+            this.lblCPF.TabIndex = 52;
+            this.lblCPF.Text = "*";
+            this.lblCPF.Visible = false;
+            // 
+            // lblRG
+            // 
+            this.lblRG.AutoSize = true;
+            this.lblRG.BackColor = System.Drawing.Color.Transparent;
+            this.lblRG.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            this.lblRG.ForeColor = System.Drawing.Color.Crimson;
+            this.lblRG.Location = new System.Drawing.Point(533, 17);
+            this.lblRG.Name = "lblRG";
+            this.lblRG.Size = new System.Drawing.Size(17, 21);
+            this.lblRG.TabIndex = 53;
+            this.lblRG.Text = "*";
+            this.lblRG.Visible = false;
+            // 
+            // lblPISPASEP
+            // 
+            this.lblPISPASEP.AutoSize = true;
+            this.lblPISPASEP.BackColor = System.Drawing.Color.Transparent;
+            this.lblPISPASEP.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            this.lblPISPASEP.ForeColor = System.Drawing.Color.Crimson;
+            this.lblPISPASEP.Location = new System.Drawing.Point(545, 96);
+            this.lblPISPASEP.Name = "lblPISPASEP";
+            this.lblPISPASEP.Size = new System.Drawing.Size(17, 21);
+            this.lblPISPASEP.TabIndex = 64;
+            this.lblPISPASEP.Text = "*";
+            this.lblPISPASEP.Visible = false;
+            // 
+            // lblCarteiraTrabalho
+            // 
+            this.lblCarteiraTrabalho.AutoSize = true;
+            this.lblCarteiraTrabalho.BackColor = System.Drawing.Color.Transparent;
+            this.lblCarteiraTrabalho.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            this.lblCarteiraTrabalho.ForeColor = System.Drawing.Color.Crimson;
+            this.lblCarteiraTrabalho.Location = new System.Drawing.Point(273, 96);
+            this.lblCarteiraTrabalho.Name = "lblCarteiraTrabalho";
+            this.lblCarteiraTrabalho.Size = new System.Drawing.Size(17, 21);
+            this.lblCarteiraTrabalho.TabIndex = 63;
+            this.lblCarteiraTrabalho.Text = "*";
+            this.lblCarteiraTrabalho.Visible = false;
+            // 
+            // lblAdmissao
+            // 
+            this.lblAdmissao.AutoSize = true;
+            this.lblAdmissao.BackColor = System.Drawing.Color.Transparent;
+            this.lblAdmissao.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            this.lblAdmissao.ForeColor = System.Drawing.Color.Crimson;
+            this.lblAdmissao.Location = new System.Drawing.Point(234, 58);
+            this.lblAdmissao.Name = "lblAdmissao";
+            this.lblAdmissao.Size = new System.Drawing.Size(17, 21);
+            this.lblAdmissao.TabIndex = 61;
+            this.lblAdmissao.Text = "*";
+            this.lblAdmissao.Visible = false;
+            // 
+            // lblSalario
+            // 
+            this.lblSalario.AutoSize = true;
+            this.lblSalario.BackColor = System.Drawing.Color.Transparent;
+            this.lblSalario.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            this.lblSalario.ForeColor = System.Drawing.Color.Crimson;
+            this.lblSalario.Location = new System.Drawing.Point(406, 60);
+            this.lblSalario.Name = "lblSalario";
+            this.lblSalario.Size = new System.Drawing.Size(17, 21);
+            this.lblSalario.TabIndex = 62;
+            this.lblSalario.Text = "*";
+            this.lblSalario.Visible = false;
+            // 
+            // lblStatus
+            // 
+            this.lblStatus.AutoSize = true;
+            this.lblStatus.BackColor = System.Drawing.Color.Transparent;
+            this.lblStatus.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            this.lblStatus.ForeColor = System.Drawing.Color.Crimson;
+            this.lblStatus.Location = new System.Drawing.Point(584, 19);
+            this.lblStatus.Name = "lblStatus";
+            this.lblStatus.Size = new System.Drawing.Size(17, 21);
+            this.lblStatus.TabIndex = 60;
+            this.lblStatus.Text = "*";
+            this.lblStatus.Visible = false;
+            // 
+            // lblDepartamento
+            // 
+            this.lblDepartamento.AutoSize = true;
+            this.lblDepartamento.BackColor = System.Drawing.Color.Transparent;
+            this.lblDepartamento.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            this.lblDepartamento.ForeColor = System.Drawing.Color.Crimson;
+            this.lblDepartamento.Location = new System.Drawing.Point(409, 19);
+            this.lblDepartamento.Name = "lblDepartamento";
+            this.lblDepartamento.Size = new System.Drawing.Size(17, 21);
+            this.lblDepartamento.TabIndex = 59;
+            this.lblDepartamento.Text = "*";
+            this.lblDepartamento.Visible = false;
+            // 
+            // lblCargo
+            // 
+            this.lblCargo.AutoSize = true;
+            this.lblCargo.BackColor = System.Drawing.Color.Transparent;
+            this.lblCargo.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            this.lblCargo.ForeColor = System.Drawing.Color.Crimson;
+            this.lblCargo.Location = new System.Drawing.Point(191, 19);
+            this.lblCargo.Name = "lblCargo";
+            this.lblCargo.Size = new System.Drawing.Size(17, 21);
+            this.lblCargo.TabIndex = 58;
+            this.lblCargo.Text = "*";
+            this.lblCargo.Visible = false;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(24, 31);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(42, 15);
+            this.label8.TabIndex = 21;
+            this.label8.Text = "Cargo:";
+            // 
+            // cbmCargo
+            // 
+            this.cbmCargo.FormattingEnabled = true;
+            this.cbmCargo.Items.AddRange(new object[] {
+            "Assistente de Vendas",
+            "Atendimento ao Cliente",
+            "Caixa",
+            "Diretor de Vendas",
+            "Estilista",
+            "Estoquista",
+            "Gerente",
+            "Recepcionista",
+            "Supervisor",
+            "Vendedor"});
+            this.cbmCargo.Location = new System.Drawing.Point(72, 22);
+            this.cbmCargo.Name = "cbmCargo";
+            this.cbmCargo.Size = new System.Drawing.Size(121, 23);
+            this.cbmCargo.TabIndex = 22;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(199, 30);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(86, 15);
+            this.label9.TabIndex = 23;
+            this.label9.Text = "Departamento:";
+            // 
+            // cbmDepartamento
+            // 
+            this.cbmDepartamento.FormattingEnabled = true;
+            this.cbmDepartamento.Items.AddRange(new object[] {
+            "Atendimento ao Cliente",
+            "Compras",
+            "Estoques",
+            "Fashion Design",
+            "Financeiro",
+            "Logística",
+            "Marketing",
+            "Recursos Humanos",
+            "Vendas"});
+            this.cbmDepartamento.Location = new System.Drawing.Point(289, 22);
+            this.cbmDepartamento.Name = "cbmDepartamento";
+            this.cbmDepartamento.Size = new System.Drawing.Size(121, 23);
+            this.cbmDepartamento.TabIndex = 24;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(416, 30);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(42, 15);
+            this.label10.TabIndex = 25;
+            this.label10.Text = "Status:";
+            // 
+            // cbmStatus
+            // 
+            this.cbmStatus.FormattingEnabled = true;
+            this.cbmStatus.Items.AddRange(new object[] {
+            "Afastado",
+            "Ativo",
+            "Demissão",
+            "Férias",
+            "Inativo",
+            "Licença Médica"});
+            this.cbmStatus.Location = new System.Drawing.Point(464, 22);
+            this.cbmStatus.Name = "cbmStatus";
+            this.cbmStatus.Size = new System.Drawing.Size(121, 23);
+            this.cbmStatus.TabIndex = 26;
+            // 
+            // dtpAdmissao
+            // 
+            this.dtpAdmissao.Location = new System.Drawing.Point(133, 62);
+            this.dtpAdmissao.Name = "dtpAdmissao";
+            this.dtpAdmissao.Size = new System.Drawing.Size(103, 23);
+            this.dtpAdmissao.TabIndex = 21;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(24, 70);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(103, 15);
+            this.label11.TabIndex = 21;
+            this.label11.Text = "Data de admissão:";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(244, 68);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(45, 15);
+            this.label12.TabIndex = 27;
+            this.label12.Text = "Salario:";
+            // 
+            // txtSalario
+            // 
+            this.txtSalario.Location = new System.Drawing.Point(291, 62);
+            this.txtSalario.Name = "txtSalario";
+            this.txtSalario.Size = new System.Drawing.Size(118, 23);
+            this.txtSalario.TabIndex = 21;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(25, 107);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(114, 15);
+            this.label13.TabIndex = 29;
+            this.label13.Text = "Carteira de trabalho:";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(287, 107);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(111, 15);
+            this.label14.TabIndex = 31;
+            this.label14.Text = "Número PIS/PASEP:";
+            // 
+            // txtCarteiraTrabalho
+            // 
+            this.txtCarteiraTrabalho.Location = new System.Drawing.Point(145, 99);
+            this.txtCarteiraTrabalho.Mask = "0000000";
+            this.txtCarteiraTrabalho.Name = "txtCarteiraTrabalho";
+            this.txtCarteiraTrabalho.Size = new System.Drawing.Size(130, 23);
+            this.txtCarteiraTrabalho.TabIndex = 23;
+            // 
+            // txtPISPASEP
+            // 
+            this.txtPISPASEP.Location = new System.Drawing.Point(404, 99);
+            this.txtPISPASEP.Mask = "000.00000.00-0";
+            this.txtPISPASEP.Name = "txtPISPASEP";
+            this.txtPISPASEP.Size = new System.Drawing.Size(144, 23);
+            this.txtPISPASEP.TabIndex = 32;
+            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.txtPISPASEP);
@@ -419,242 +655,6 @@
             this.groupBox2.TabIndex = 58;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Dados profissionais";
-            // 
-            // txtPISPASEP
-            // 
-            this.txtPISPASEP.Location = new System.Drawing.Point(404, 99);
-            this.txtPISPASEP.Mask = "000.00000.00-0";
-            this.txtPISPASEP.Name = "txtPISPASEP";
-            this.txtPISPASEP.Size = new System.Drawing.Size(144, 23);
-            this.txtPISPASEP.TabIndex = 32;
-            // 
-            // txtCarteiraTrabalho
-            // 
-            this.txtCarteiraTrabalho.Location = new System.Drawing.Point(145, 99);
-            this.txtCarteiraTrabalho.Mask = "0000000";
-            this.txtCarteiraTrabalho.Name = "txtCarteiraTrabalho";
-            this.txtCarteiraTrabalho.Size = new System.Drawing.Size(130, 23);
-            this.txtCarteiraTrabalho.TabIndex = 23;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(287, 107);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(111, 15);
-            this.label14.TabIndex = 31;
-            this.label14.Text = "Número PIS/PASEP:";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(25, 107);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(114, 15);
-            this.label13.TabIndex = 29;
-            this.label13.Text = "Carteira de trabalho:";
-            // 
-            // txtSalario
-            // 
-            this.txtSalario.Location = new System.Drawing.Point(291, 62);
-            this.txtSalario.Name = "txtSalario";
-            this.txtSalario.Size = new System.Drawing.Size(118, 23);
-            this.txtSalario.TabIndex = 21;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(244, 68);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(45, 15);
-            this.label12.TabIndex = 27;
-            this.label12.Text = "Salario:";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(24, 70);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(103, 15);
-            this.label11.TabIndex = 21;
-            this.label11.Text = "Data de admissão:";
-            // 
-            // dtpAdmissao
-            // 
-            this.dtpAdmissao.Location = new System.Drawing.Point(133, 62);
-            this.dtpAdmissao.Name = "dtpAdmissao";
-            this.dtpAdmissao.Size = new System.Drawing.Size(103, 23);
-            this.dtpAdmissao.TabIndex = 21;
-            // 
-            // cbmStatus
-            // 
-            this.cbmStatus.FormattingEnabled = true;
-            this.cbmStatus.Items.AddRange(new object[] {
-            "Afastado",
-            "Ativo",
-            "Demissão",
-            "Férias",
-            "Inativo",
-            "Licença Médica"});
-            this.cbmStatus.Location = new System.Drawing.Point(464, 22);
-            this.cbmStatus.Name = "cbmStatus";
-            this.cbmStatus.Size = new System.Drawing.Size(121, 23);
-            this.cbmStatus.TabIndex = 26;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(416, 30);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(42, 15);
-            this.label10.TabIndex = 25;
-            this.label10.Text = "Status:";
-            // 
-            // cbmDepartamento
-            // 
-            this.cbmDepartamento.FormattingEnabled = true;
-            this.cbmDepartamento.Items.AddRange(new object[] {
-            "Atendimento ao Cliente",
-            "Compras",
-            "Estoques",
-            "Fashion Design",
-            "Financeiro",
-            "Logística",
-            "Marketing",
-            "Recursos Humanos",
-            "Vendas"});
-            this.cbmDepartamento.Location = new System.Drawing.Point(289, 22);
-            this.cbmDepartamento.Name = "cbmDepartamento";
-            this.cbmDepartamento.Size = new System.Drawing.Size(121, 23);
-            this.cbmDepartamento.TabIndex = 24;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(199, 30);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(86, 15);
-            this.label9.TabIndex = 23;
-            this.label9.Text = "Departamento:";
-            // 
-            // cbmCargo
-            // 
-            this.cbmCargo.FormattingEnabled = true;
-            this.cbmCargo.Items.AddRange(new object[] {
-            "Assistente de Vendas",
-            "Atendimento ao Cliente",
-            "Caixa",
-            "Diretor de Vendas",
-            "Estilista",
-            "Estoquista",
-            "Gerente",
-            "Recepcionista",
-            "Supervisor",
-            "Vendedor"});
-            this.cbmCargo.Location = new System.Drawing.Point(72, 22);
-            this.cbmCargo.Name = "cbmCargo";
-            this.cbmCargo.Size = new System.Drawing.Size(121, 23);
-            this.cbmCargo.TabIndex = 22;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(24, 31);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(42, 15);
-            this.label8.TabIndex = 21;
-            this.label8.Text = "Cargo:";
-            // 
-            // lblCargo
-            // 
-            this.lblCargo.AutoSize = true;
-            this.lblCargo.BackColor = System.Drawing.Color.Transparent;
-            this.lblCargo.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
-            this.lblCargo.ForeColor = System.Drawing.Color.Crimson;
-            this.lblCargo.Location = new System.Drawing.Point(191, 19);
-            this.lblCargo.Name = "lblCargo";
-            this.lblCargo.Size = new System.Drawing.Size(17, 21);
-            this.lblCargo.TabIndex = 58;
-            this.lblCargo.Text = "*";
-            this.lblCargo.Visible = false;
-            // 
-            // lblDepartamento
-            // 
-            this.lblDepartamento.AutoSize = true;
-            this.lblDepartamento.BackColor = System.Drawing.Color.Transparent;
-            this.lblDepartamento.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
-            this.lblDepartamento.ForeColor = System.Drawing.Color.Crimson;
-            this.lblDepartamento.Location = new System.Drawing.Point(409, 19);
-            this.lblDepartamento.Name = "lblDepartamento";
-            this.lblDepartamento.Size = new System.Drawing.Size(17, 21);
-            this.lblDepartamento.TabIndex = 59;
-            this.lblDepartamento.Text = "*";
-            this.lblDepartamento.Visible = false;
-            // 
-            // lblStatus
-            // 
-            this.lblStatus.AutoSize = true;
-            this.lblStatus.BackColor = System.Drawing.Color.Transparent;
-            this.lblStatus.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
-            this.lblStatus.ForeColor = System.Drawing.Color.Crimson;
-            this.lblStatus.Location = new System.Drawing.Point(584, 19);
-            this.lblStatus.Name = "lblStatus";
-            this.lblStatus.Size = new System.Drawing.Size(17, 21);
-            this.lblStatus.TabIndex = 60;
-            this.lblStatus.Text = "*";
-            this.lblStatus.Visible = false;
-            // 
-            // lblAdmissao
-            // 
-            this.lblAdmissao.AutoSize = true;
-            this.lblAdmissao.BackColor = System.Drawing.Color.Transparent;
-            this.lblAdmissao.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
-            this.lblAdmissao.ForeColor = System.Drawing.Color.Crimson;
-            this.lblAdmissao.Location = new System.Drawing.Point(234, 58);
-            this.lblAdmissao.Name = "lblAdmissao";
-            this.lblAdmissao.Size = new System.Drawing.Size(17, 21);
-            this.lblAdmissao.TabIndex = 61;
-            this.lblAdmissao.Text = "*";
-            this.lblAdmissao.Visible = false;
-            // 
-            // lblSalario
-            // 
-            this.lblSalario.AutoSize = true;
-            this.lblSalario.BackColor = System.Drawing.Color.Transparent;
-            this.lblSalario.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
-            this.lblSalario.ForeColor = System.Drawing.Color.Crimson;
-            this.lblSalario.Location = new System.Drawing.Point(406, 60);
-            this.lblSalario.Name = "lblSalario";
-            this.lblSalario.Size = new System.Drawing.Size(17, 21);
-            this.lblSalario.TabIndex = 62;
-            this.lblSalario.Text = "*";
-            this.lblSalario.Visible = false;
-            // 
-            // lblCarteiraTrabalho
-            // 
-            this.lblCarteiraTrabalho.AutoSize = true;
-            this.lblCarteiraTrabalho.BackColor = System.Drawing.Color.Transparent;
-            this.lblCarteiraTrabalho.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
-            this.lblCarteiraTrabalho.ForeColor = System.Drawing.Color.Crimson;
-            this.lblCarteiraTrabalho.Location = new System.Drawing.Point(273, 96);
-            this.lblCarteiraTrabalho.Name = "lblCarteiraTrabalho";
-            this.lblCarteiraTrabalho.Size = new System.Drawing.Size(17, 21);
-            this.lblCarteiraTrabalho.TabIndex = 63;
-            this.lblCarteiraTrabalho.Text = "*";
-            this.lblCarteiraTrabalho.Visible = false;
-            // 
-            // lblPISPASEP
-            // 
-            this.lblPISPASEP.AutoSize = true;
-            this.lblPISPASEP.BackColor = System.Drawing.Color.Transparent;
-            this.lblPISPASEP.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
-            this.lblPISPASEP.ForeColor = System.Drawing.Color.Crimson;
-            this.lblPISPASEP.Location = new System.Drawing.Point(545, 96);
-            this.lblPISPASEP.Name = "lblPISPASEP";
-            this.lblPISPASEP.Size = new System.Drawing.Size(17, 21);
-            this.lblPISPASEP.TabIndex = 64;
-            this.lblPISPASEP.Text = "*";
-            this.lblPISPASEP.Visible = false;
             // 
             // UcFuncionariosCadastro
             // 
@@ -706,27 +706,27 @@
         private System.Windows.Forms.Label lblTelefone;
         private System.Windows.Forms.Label lblEmail;
         private System.Windows.Forms.Label lblCEP;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.MaskedTextBox txtPISPASEP;
-        private System.Windows.Forms.MaskedTextBox txtCarteiraTrabalho;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox txtSalario;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.DateTimePicker dtpAdmissao;
-        private System.Windows.Forms.ComboBox cbmStatus;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.ComboBox cbmDepartamento;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.ComboBox cbmCargo;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label lblCargo;
-        private System.Windows.Forms.Label lblDepartamento;
-        private System.Windows.Forms.Label lblStatus;
+        private System.Windows.Forms.Label lblPISPASEP;
+        private System.Windows.Forms.Label lblCarteiraTrabalho;
         private System.Windows.Forms.Label lblAdmissao;
         private System.Windows.Forms.Label lblSalario;
-        private System.Windows.Forms.Label lblCarteiraTrabalho;
-        private System.Windows.Forms.Label lblPISPASEP;
+        private System.Windows.Forms.Label lblStatus;
+        private System.Windows.Forms.Label lblDepartamento;
+        private System.Windows.Forms.Label lblCargo;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.ComboBox cbmCargo;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.ComboBox cbmDepartamento;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.ComboBox cbmStatus;
+        private System.Windows.Forms.DateTimePicker dtpAdmissao;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox txtSalario;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.MaskedTextBox txtCarteiraTrabalho;
+        private System.Windows.Forms.MaskedTextBox txtPISPASEP;
+        private System.Windows.Forms.GroupBox groupBox2;
     }
 }

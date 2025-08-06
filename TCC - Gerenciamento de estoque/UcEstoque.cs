@@ -17,59 +17,22 @@ namespace TCC___Gerenciamento_de_estoque
             InitializeComponent();
         }
 
-        private void UcEstoque_Load(object sender, EventArgs e)
+        private void btnCadastrar_Click(object sender, EventArgs e)
         {
-            EstilizarDataGridView();
+            FormMenu formPai = this.FindForm() as FormMenu;
+            if (formPai != null)
+            {
+                formPai.CarregarUserControl(new UcEstoqueCadastro());
+            }
         }
 
-        private void EstilizarDataGridView()
+        private void btnEditar_Click(object sender, EventArgs e)
         {
-            var roxoPrimario = Color.FromArgb(138, 43, 226); // BlueViolet
-            var roxoSecundario = Color.FromArgb(159, 105, 255); // Um roxo mais claro
-            var branco = Color.White;
-            var cinzaClaro = Color.FromArgb(240, 240, 240);
-
-            DataGridView dgv = dataGridView1;
-
-            // Estilo geral
-            dgv.BorderStyle = BorderStyle.None;
-            dgv.BackgroundColor = branco;
-            dgv.EnableHeadersVisualStyles = false;
-            dgv.GridColor = roxoPrimario;
-
-            // Cabeçalho
-            dgv.ColumnHeadersDefaultCellStyle.BackColor = roxoPrimario;
-            dgv.ColumnHeadersDefaultCellStyle.ForeColor = branco;
-            dgv.ColumnHeadersDefaultCellStyle.Font = new Font("Poppins", 11, FontStyle.Bold);
-            dgv.ColumnHeadersHeight = 40;
-            dgv.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-
-            // Células
-            dgv.DefaultCellStyle.BackColor = branco;
-            dgv.DefaultCellStyle.ForeColor = Color.Black;
-            dgv.DefaultCellStyle.Font = new Font("Poppins", 10);
-            dgv.DefaultCellStyle.SelectionBackColor = roxoSecundario;
-            dgv.DefaultCellStyle.SelectionForeColor = Color.White;
-
-            // Alternar cor das linhas
-            dgv.AlternatingRowsDefaultCellStyle.BackColor = cinzaClaro;
-
-            // Linhas
-            dgv.RowTemplate.Height = 35;
-            dgv.RowHeadersVisible = false;
-
-            // Desabilita edição
-            dgv.ReadOnly = true;
-            dgv.AllowUserToAddRows = false;
-            dgv.AllowUserToDeleteRows = false;
-            dgv.AllowUserToResizeRows = false;
-            dgv.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgv.MultiSelect = false;
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
+            FormMenu formPai = this.FindForm() as FormMenu;
+            if (formPai != null)
+            {
+                formPai.CarregarUserControl(new UcEstoqueEditar());
+            }
         }
     }
 }

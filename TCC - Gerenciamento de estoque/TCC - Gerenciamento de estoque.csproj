@@ -99,7 +99,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Conexao.cs" />
-    <Compile Include="FormLogin.cs" />
+    <Compile Include="FormLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FormLogin.Designer.cs">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </Compile>
@@ -127,6 +129,13 @@
     </Compile>
     <Compile Include="RJTextBox.Designer.cs">
       <DependentUpon>RJTextBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sessao.cs" />
+    <Compile Include="UcEstoqueCadastro.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UcEstoqueCadastro.Designer.cs">
+      <DependentUpon>UcEstoqueCadastro.cs</DependentUpon>
     </Compile>
     <Compile Include="UcClientes.cs">
       <SubType>UserControl</SubType>
@@ -182,6 +191,12 @@
     <Compile Include="UcUsuarios.Designer.cs">
       <DependentUpon>UcUsuarios.cs</DependentUpon>
     </Compile>
+    <Compile Include="UcEstoqueEditar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UcEstoqueEditar.Designer.cs">
+      <DependentUpon>UcEstoqueEditar.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </EmbeddedResource>
@@ -196,6 +211,9 @@
     <EmbeddedResource Include="RJTextBox.resx">
       <DependentUpon>RJTextBox.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UcEstoqueCadastro.resx">
+      <DependentUpon>UcEstoqueCadastro.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UcClientes.resx">
       <DependentUpon>UcClientes.cs</DependentUpon>
@@ -223,6 +241,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UcUsuarios.resx">
       <DependentUpon>UcUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UcEstoqueEditar.resx">
+      <DependentUpon>UcEstoqueEditar.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

@@ -7,16 +7,6 @@ using System.IO;
 
 namespace TCC___Gerenciamento_de_estoque
 {
-    // Classe para armazenar dados da sessão do usuário logado
-    public static class Sessao
-    {
-        public static int Id { get; set; }
-        public static string Nome { get; set; }
-        public static string Email { get; set; }
-        public static string Usuario { get; set; }
-        public static byte[] Imagem { get; set; }
-        public static string NivelAcesso { get; set; }
-    }
 
     public partial class FormLogin : Form
     {
@@ -121,6 +111,19 @@ namespace TCC___Gerenciamento_de_estoque
             {
                 MessageBox.Show("Erro ao tentar fazer login: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void olhoAberto_Click(object sender, EventArgs e)
+        {
+            olhoFechado.Visible = true;
+            txtSenha.UseSystemPasswordChar = true;
+        
+        }
+
+        private void olhoFechado_Click(object sender, EventArgs e)
+        {
+            olhoFechado.Visible = false;
+            txtSenha.UseSystemPasswordChar = false;
         }
     }
 }
