@@ -30,13 +30,13 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UcFuncionarios));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnEditar = new CustomControls.RJControls.RJButton();
             this.txtPesquisar = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.cmbFiltroCargo = new System.Windows.Forms.ComboBox();
             this.btnCadastrar = new CustomControls.RJControls.RJButton();
             this.dgvFuncionarios = new System.Windows.Forms.DataGridView();
             this.Clientes = new System.Windows.Forms.Label();
-            this.btnEditar = new CustomControls.RJControls.RJButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFuncionarios)).BeginInit();
@@ -57,6 +57,26 @@
             this.panel1.Size = new System.Drawing.Size(665, 394);
             this.panel1.TabIndex = 4;
             // 
+            // btnEditar
+            // 
+            this.btnEditar.BackColor = System.Drawing.Color.Indigo;
+            this.btnEditar.BackgroundColor = System.Drawing.Color.Indigo;
+            this.btnEditar.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnEditar.BorderRadius = 10;
+            this.btnEditar.BorderSize = 0;
+            this.btnEditar.FlatAppearance.BorderSize = 0;
+            this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEditar.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditar.ForeColor = System.Drawing.SystemColors.Window;
+            this.btnEditar.Location = new System.Drawing.Point(338, 46);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(150, 34);
+            this.btnEditar.TabIndex = 11;
+            this.btnEditar.Text = "Editar";
+            this.btnEditar.TextColor = System.Drawing.SystemColors.Window;
+            this.btnEditar.UseVisualStyleBackColor = false;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
+            // 
             // txtPesquisar
             // 
             this.txtPesquisar.BackColor = System.Drawing.Color.BlueViolet;
@@ -69,6 +89,7 @@
             this.txtPesquisar.TabIndex = 10;
             this.txtPesquisar.Tag = "";
             this.txtPesquisar.Text = "Buscar...";
+            this.txtPesquisar.TextChanged += new System.EventHandler(this.txtPesquisar_TextChanged);
             // 
             // pictureBox1
             // 
@@ -87,6 +108,7 @@
             this.cmbFiltroCargo.Name = "cmbFiltroCargo";
             this.cmbFiltroCargo.Size = new System.Drawing.Size(150, 21);
             this.cmbFiltroCargo.TabIndex = 8;
+            this.cmbFiltroCargo.SelectedIndexChanged += new System.EventHandler(this.cmbFiltroCargo_SelectedIndexChanged_1);
             // 
             // btnCadastrar
             // 
@@ -115,6 +137,7 @@
             this.dgvFuncionarios.Name = "dgvFuncionarios";
             this.dgvFuncionarios.Size = new System.Drawing.Size(628, 251);
             this.dgvFuncionarios.TabIndex = 4;
+            this.dgvFuncionarios.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFuncionarios_CellContentClick);
             // 
             // Clientes
             // 
@@ -126,26 +149,7 @@
             this.Clientes.Size = new System.Drawing.Size(125, 30);
             this.Clientes.TabIndex = 3;
             this.Clientes.Text = "Funcionário";
-            // 
-            // btnEditar
-            // 
-            this.btnEditar.BackColor = System.Drawing.Color.Indigo;
-            this.btnEditar.BackgroundColor = System.Drawing.Color.Indigo;
-            this.btnEditar.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnEditar.BorderRadius = 10;
-            this.btnEditar.BorderSize = 0;
-            this.btnEditar.FlatAppearance.BorderSize = 0;
-            this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEditar.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditar.ForeColor = System.Drawing.SystemColors.Window;
-            this.btnEditar.Location = new System.Drawing.Point(338, 46);
-            this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(150, 34);
-            this.btnEditar.TabIndex = 11;
-            this.btnEditar.Text = "Editar";
-            this.btnEditar.TextColor = System.Drawing.SystemColors.Window;
-            this.btnEditar.UseVisualStyleBackColor = false;
-            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
+            this.Clientes.Click += new System.EventHandler(this.Clientes_Click);
             // 
             // UcFuncionarios
             // 

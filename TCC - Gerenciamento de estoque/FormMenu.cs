@@ -27,9 +27,9 @@ namespace TCC___Gerenciamento_de_estoque
             ExibirNomeUsuario();
 
 
-            lblNomeUsuario.Text = $"Nome: {Sessao.Nome}";
-            lblEmailUsuario.Text = $"Email: {Sessao.Email}";
-            lblUsuario.Text = $"Usuário: {Sessao.Usuario}";
+            lblNomeUsuario.Text = Sessao.Nome;
+            lblEmailUsuario.Text = Sessao.Email;
+            lblUsuario.Text = Sessao.Usuario;
 
             if (Sessao.Imagem != null)
             {
@@ -135,16 +135,38 @@ namespace TCC___Gerenciamento_de_estoque
             btnUsuario.BackColor = Color.BlueViolet;
         }
 
+        private void btnLogin_MouseEnter(object sender, EventArgs e)
+        {
+            btnLogin.BackColor = Color.FromArgb(146, 121, 248);
+        }
 
+        private void btnLogin_MouseLeave(object sender, EventArgs e)
+        {
+            btnLogin.BackColor = Color.BlueViolet;
+        }
+
+      
 
         // Repita para os outros botões...
 
         public void CarregarUserControl(UserControl uc)
         {
-            panelConteudo.Controls.Clear();
+            // Remover todos os controles dentro do panelConteudo, EXCETO o panelUsuarioInfo
+            for (int i = panelConteudo.Controls.Count - 1; i >= 0; i--)
+            {
+                Control ctrl = panelConteudo.Controls[i];
+                if (ctrl != panelUsuarioInfo)
+                    panelConteudo.Controls.RemoveAt(i);
+            }
+
+            // Adiciona o novo UserControl
             uc.Dock = DockStyle.Fill;
             panelConteudo.Controls.Add(uc);
+
+            // Garante que o panelUsuarioInfo fique sempre visível por cima
+            panelUsuarioInfo.BringToFront();
         }
+
 
         private void btnEstoque_Click(object sender, EventArgs e)
         {
@@ -171,6 +193,13 @@ namespace TCC___Gerenciamento_de_estoque
             CarregarUserControl(new UcUsuarios());
         }
 
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            FormLogin formLogin = new FormLogin();
+            formLogin.Show();
+            this.Hide();
+        }
+
         // Outras funções...
 
         private void picUsuario_Click(object sender, EventArgs e)
@@ -190,11 +219,31 @@ namespace TCC___Gerenciamento_de_estoque
             // Agora sim exibe o painel ao clicar
             panelUsuarioInfo.Visible = true;
             panelUsuarioInfo.BringToFront();
+
+            MostrarPainelUsuarioInfo();
         }
 
         private void btnFecharInfo_Click(object sender, EventArgs e)
         {
             panelUsuarioInfo.Visible = false;
+        }
+
+        public void MostrarPainelUsuarioInfo()
+        {
+            if (Sessao.Imagem != null)
+            {
+                using (MemoryStream ms = new MemoryStream(Sessao.Imagem))
+                {
+                    picUsuarioInfo.Image = Image.FromStream(ms); // Mostra a imagem ampliada
+                }
+            }
+            else
+            {
+                picUsuarioInfo.Image = null;
+            }
+
+            panelUsuarioInfo.Visible = true;
+            panelUsuarioInfo.BringToFront();
         }
     }
 }

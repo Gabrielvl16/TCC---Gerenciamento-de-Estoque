@@ -221,5 +221,25 @@ namespace TCC___Gerenciamento_de_estoque
                 }
             }
         }
+
+        private void Clientes_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtPesquisar_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmbFiltroCargo_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgvFuncionarios_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

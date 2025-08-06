@@ -33,7 +33,6 @@
             this.Cadastro = new System.Windows.Forms.GroupBox();
             this.lblStatus = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.TextBox();
-            this.lblNivel = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.lblSenha = new System.Windows.Forms.Label();
             this.cmbStatus = new System.Windows.Forms.ComboBox();
@@ -49,6 +48,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.lblUsuario = new System.Windows.Forms.Label();
+            this.lblNivel = new System.Windows.Forms.Label();
             this.picUsuarioInfo = new CustomControls.RJControls.RJCircularPictureBox();
             this.btnVoltar = new CustomControls.RJControls.RJButton();
             this.btnCancelar = new CustomControls.RJControls.RJButton();
@@ -113,18 +113,6 @@
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(346, 20);
             this.txtEmail.TabIndex = 11;
-            // 
-            // lblNivel
-            // 
-            this.lblNivel.AutoSize = true;
-            this.lblNivel.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
-            this.lblNivel.ForeColor = System.Drawing.Color.Crimson;
-            this.lblNivel.Location = new System.Drawing.Point(224, 114);
-            this.lblNivel.Name = "lblNivel";
-            this.lblNivel.Size = new System.Drawing.Size(17, 21);
-            this.lblNivel.TabIndex = 52;
-            this.lblNivel.Text = "*";
-            this.lblNivel.Visible = false;
             // 
             // label6
             // 
@@ -277,6 +265,18 @@
             this.lblUsuario.TabIndex = 50;
             this.lblUsuario.Text = "*";
             this.lblUsuario.Visible = false;
+            // 
+            // lblNivel
+            // 
+            this.lblNivel.AutoSize = true;
+            this.lblNivel.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            this.lblNivel.ForeColor = System.Drawing.Color.Crimson;
+            this.lblNivel.Location = new System.Drawing.Point(224, 114);
+            this.lblNivel.Name = "lblNivel";
+            this.lblNivel.Size = new System.Drawing.Size(17, 21);
+            this.lblNivel.TabIndex = 52;
+            this.lblNivel.Text = "*";
+            this.lblNivel.Visible = false;
             // 
             // picUsuarioInfo
             // 
