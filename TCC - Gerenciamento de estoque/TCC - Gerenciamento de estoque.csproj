@@ -118,83 +118,83 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="RJButton.cs">
+    <Compile Include="Botoes diferentes\RJButton.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="RJCircularPictureBox.cs">
+    <Compile Include="Botoes diferentes\RJCircularPictureBox.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="RJTextBox.cs">
+    <Compile Include="Botoes diferentes\RJTextBox.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="RJTextBox.Designer.cs">
+    <Compile Include="Botoes diferentes\RJTextBox.Designer.cs">
       <DependentUpon>RJTextBox.cs</DependentUpon>
     </Compile>
     <Compile Include="Sessao.cs" />
-    <Compile Include="UcEstoqueCadastro.cs">
+    <Compile Include="Estoque\UcEstoqueCadastro.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UcEstoqueCadastro.Designer.cs">
+    <Compile Include="Estoque\UcEstoqueCadastro.Designer.cs">
       <DependentUpon>UcEstoqueCadastro.cs</DependentUpon>
     </Compile>
-    <Compile Include="UcClientes.cs">
+    <Compile Include="Clientes\UcClientes.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UcClientes.Designer.cs">
+    <Compile Include="Clientes\UcClientes.Designer.cs">
       <DependentUpon>UcClientes.cs</DependentUpon>
     </Compile>
-    <Compile Include="UcEstoque.cs">
+    <Compile Include="Estoque\UcEstoque.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UcEstoque.Designer.cs">
+    <Compile Include="Estoque\UcEstoque.Designer.cs">
       <DependentUpon>UcEstoque.cs</DependentUpon>
     </Compile>
-    <Compile Include="UcFuncionarios.cs">
+    <Compile Include="Funcionarios\UcFuncionarios.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UcFuncionarios.Designer.cs">
+    <Compile Include="Funcionarios\UcFuncionarios.Designer.cs">
       <DependentUpon>UcFuncionarios.cs</DependentUpon>
     </Compile>
-    <Compile Include="UcFuncionariosCadastro.cs">
+    <Compile Include="Funcionarios\UcFuncionariosCadastro.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UcFuncionariosCadastro.Designer.cs">
+    <Compile Include="Funcionarios\UcFuncionariosCadastro.Designer.cs">
       <DependentUpon>UcFuncionariosCadastro.cs</DependentUpon>
     </Compile>
-    <Compile Include="UcFuncionariosEditar.cs">
+    <Compile Include="Funcionarios\UcFuncionariosEditar.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UcFuncionariosEditar.Designer.cs">
+    <Compile Include="Funcionarios\UcFuncionariosEditar.Designer.cs">
       <DependentUpon>UcFuncionariosEditar.cs</DependentUpon>
     </Compile>
-    <Compile Include="UcRelatorios.cs">
+    <Compile Include="Relatorios\UcRelatorios.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UcRelatorios.Designer.cs">
+    <Compile Include="Relatorios\UcRelatorios.Designer.cs">
       <DependentUpon>UcRelatorios.cs</DependentUpon>
     </Compile>
-    <Compile Include="UcUsuarioCadastro.cs">
+    <Compile Include="Usuários\UcUsuarioCadastro.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UcUsuarioCadastro.Designer.cs">
+    <Compile Include="Usuários\UcUsuarioCadastro.Designer.cs">
       <DependentUpon>UcUsuarioCadastro.cs</DependentUpon>
     </Compile>
-    <Compile Include="UcUsuarioEditar.cs">
+    <Compile Include="Usuários\UcUsuarioEditar.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UcUsuarioEditar.Designer.cs">
+    <Compile Include="Usuários\UcUsuarioEditar.Designer.cs">
       <DependentUpon>UcUsuarioEditar.cs</DependentUpon>
     </Compile>
-    <Compile Include="UcUsuarios.cs">
+    <Compile Include="Usuários\UcUsuarios.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UcUsuarios.Designer.cs">
+    <Compile Include="Usuários\UcUsuarios.Designer.cs">
       <DependentUpon>UcUsuarios.cs</DependentUpon>
     </Compile>
-    <Compile Include="UcEstoqueEditar.cs">
+    <Compile Include="Estoque\UcEstoqueEditar.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UcEstoqueEditar.Designer.cs">
+    <Compile Include="Estoque\UcEstoqueEditar.Designer.cs">
       <DependentUpon>UcEstoqueEditar.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="FormLogin.resx">
@@ -208,41 +208,41 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="RJTextBox.resx">
+    <EmbeddedResource Include="Botoes diferentes\RJTextBox.resx">
       <DependentUpon>RJTextBox.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="UcEstoqueCadastro.resx">
+    <EmbeddedResource Include="Estoque\UcEstoqueCadastro.resx">
       <DependentUpon>UcEstoqueCadastro.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UcClientes.resx">
+    <EmbeddedResource Include="Clientes\UcClientes.resx">
       <DependentUpon>UcClientes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UcEstoque.resx">
+    <EmbeddedResource Include="Estoque\UcEstoque.resx">
       <DependentUpon>UcEstoque.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UcFuncionarios.resx">
+    <EmbeddedResource Include="Funcionarios\UcFuncionarios.resx">
       <DependentUpon>UcFuncionarios.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UcFuncionariosCadastro.resx">
+    <EmbeddedResource Include="Funcionarios\UcFuncionariosCadastro.resx">
       <DependentUpon>UcFuncionariosCadastro.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UcFuncionariosEditar.resx">
+    <EmbeddedResource Include="Funcionarios\UcFuncionariosEditar.resx">
       <DependentUpon>UcFuncionariosEditar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UcRelatorios.resx">
+    <EmbeddedResource Include="Relatorios\UcRelatorios.resx">
       <DependentUpon>UcRelatorios.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UcUsuarioCadastro.resx">
+    <EmbeddedResource Include="Usuários\UcUsuarioCadastro.resx">
       <DependentUpon>UcUsuarioCadastro.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UcUsuarioEditar.resx">
+    <EmbeddedResource Include="Usuários\UcUsuarioEditar.resx">
       <DependentUpon>UcUsuarioEditar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UcUsuarios.resx">
+    <EmbeddedResource Include="Usuários\UcUsuarios.resx">
       <DependentUpon>UcUsuarios.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UcEstoqueEditar.resx">
+    <EmbeddedResource Include="Estoque\UcEstoqueEditar.resx">
       <DependentUpon>UcEstoqueEditar.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
@@ -259,5 +259,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
