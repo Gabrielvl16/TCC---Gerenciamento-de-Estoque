@@ -30,28 +30,28 @@
         {
             this.Clientes = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtDescricao = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtPreco = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.numQuantidade = new System.Windows.Forms.NumericUpDown();
+            this.cbCor = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.cbTamanho = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbCategoria = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.btnVoltarProduto = new CustomControls.RJControls.RJButton();
-            this.btnCancelarProduto = new CustomControls.RJControls.RJButton();
-            this.btnCadastrarProduto = new CustomControls.RJControls.RJButton();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.txtNome = new System.Windows.Forms.TextBox();
+            this.btnCadastrar = new CustomControls.RJControls.RJButton();
+            this.btnCancelar = new CustomControls.RJControls.RJButton();
+            this.btnVoltar = new CustomControls.RJControls.RJButton();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numQuantidade)).BeginInit();
             this.SuspendLayout();
             // 
             // Clientes
@@ -70,25 +70,33 @@
             this.groupBox1.Controls.Add(this.pictureBox1);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.textBox3);
+            this.groupBox1.Controls.Add(this.txtDescricao);
             this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.textBox2);
+            this.groupBox1.Controls.Add(this.txtPreco);
             this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.numericUpDown1);
-            this.groupBox1.Controls.Add(this.comboBox3);
+            this.groupBox1.Controls.Add(this.numQuantidade);
+            this.groupBox1.Controls.Add(this.cbCor);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.comboBox2);
+            this.groupBox1.Controls.Add(this.cbTamanho);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.Controls.Add(this.cbCategoria);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.txtNome);
             this.groupBox1.Location = new System.Drawing.Point(9, 45);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(642, 296);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Dados do Produto";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(455, 150);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(144, 129);
+            this.pictureBox1.TabIndex = 28;
+            this.pictureBox1.TabStop = false;
             // 
             // label8
             // 
@@ -108,13 +116,13 @@
             this.label7.TabIndex = 14;
             this.label7.Text = "Descrição";
             // 
-            // textBox3
+            // txtDescricao
             // 
-            this.textBox3.Location = new System.Drawing.Point(6, 150);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(289, 129);
-            this.textBox3.TabIndex = 13;
+            this.txtDescricao.Location = new System.Drawing.Point(6, 150);
+            this.txtDescricao.Multiline = true;
+            this.txtDescricao.Name = "txtDescricao";
+            this.txtDescricao.Size = new System.Drawing.Size(289, 129);
+            this.txtDescricao.TabIndex = 13;
             // 
             // label6
             // 
@@ -125,12 +133,12 @@
             this.label6.TabIndex = 12;
             this.label6.Text = "Preço";
             // 
-            // textBox2
+            // txtPreco
             // 
-            this.textBox2.Location = new System.Drawing.Point(532, 58);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(104, 20);
-            this.textBox2.TabIndex = 11;
+            this.txtPreco.Location = new System.Drawing.Point(532, 58);
+            this.txtPreco.Name = "txtPreco";
+            this.txtPreco.Size = new System.Drawing.Size(104, 20);
+            this.txtPreco.TabIndex = 11;
             // 
             // label5
             // 
@@ -141,17 +149,17 @@
             this.label5.TabIndex = 10;
             this.label5.Text = "Quantidade";
             // 
-            // numericUpDown1
+            // numQuantidade
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(236, 100);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(135, 20);
-            this.numericUpDown1.TabIndex = 9;
+            this.numQuantidade.Location = new System.Drawing.Point(236, 100);
+            this.numQuantidade.Name = "numQuantidade";
+            this.numQuantidade.Size = new System.Drawing.Size(135, 20);
+            this.numQuantidade.TabIndex = 9;
             // 
-            // comboBox3
+            // cbCor
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Items.AddRange(new object[] {
+            this.cbCor.FormattingEnabled = true;
+            this.cbCor.Items.AddRange(new object[] {
             "Branco",
             "",
             "",
@@ -238,10 +246,10 @@
             "",
             "",
             "Chumbo"});
-            this.comboBox3.Location = new System.Drawing.Point(6, 100);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(212, 21);
-            this.comboBox3.TabIndex = 8;
+            this.cbCor.Location = new System.Drawing.Point(6, 100);
+            this.cbCor.Name = "cbCor";
+            this.cbCor.Size = new System.Drawing.Size(212, 21);
+            this.cbCor.TabIndex = 8;
             // 
             // label4
             // 
@@ -261,10 +269,10 @@
             this.label3.TabIndex = 5;
             this.label3.Text = "Tamanho";
             // 
-            // comboBox2
+            // cbTamanho
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
+            this.cbTamanho.FormattingEnabled = true;
+            this.cbTamanho.Items.AddRange(new object[] {
             "PP (Extra Pequeno)",
             "P (Pequeno)",
             "M (Médio)",
@@ -281,10 +289,10 @@
             "48",
             "50",
             "52"});
-            this.comboBox2.Location = new System.Drawing.Point(389, 57);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 21);
-            this.comboBox2.TabIndex = 4;
+            this.cbTamanho.Location = new System.Drawing.Point(389, 57);
+            this.cbTamanho.Name = "cbTamanho";
+            this.cbTamanho.Size = new System.Drawing.Size(121, 21);
+            this.cbTamanho.TabIndex = 4;
             // 
             // label2
             // 
@@ -295,10 +303,10 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "Categoria do Produto";
             // 
-            // comboBox1
+            // cbCategoria
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.cbCategoria.FormattingEnabled = true;
+            this.cbCategoria.Items.AddRange(new object[] {
             "Camiseta",
             "Regata",
             "Blusa",
@@ -354,11 +362,10 @@
             "",
             "",
             "Bolsa"});
-            this.comboBox1.Location = new System.Drawing.Point(236, 57);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(135, 21);
-            this.comboBox1.TabIndex = 2;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.cbCategoria.Location = new System.Drawing.Point(236, 57);
+            this.cbCategoria.Name = "cbCategoria";
+            this.cbCategoria.Size = new System.Drawing.Size(135, 21);
+            this.cbCategoria.TabIndex = 2;
             // 
             // label1
             // 
@@ -369,94 +376,88 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Nome do Produto";
             // 
-            // textBox1
+            // txtNome
             // 
-            this.textBox1.Location = new System.Drawing.Point(6, 57);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(212, 20);
-            this.textBox1.TabIndex = 0;
+            this.txtNome.Location = new System.Drawing.Point(6, 57);
+            this.txtNome.Name = "txtNome";
+            this.txtNome.Size = new System.Drawing.Size(212, 20);
+            this.txtNome.TabIndex = 0;
             // 
-            // btnVoltarProduto
+            // btnCadastrar
             // 
-            this.btnVoltarProduto.BackColor = System.Drawing.Color.BlueViolet;
-            this.btnVoltarProduto.BackgroundColor = System.Drawing.Color.BlueViolet;
-            this.btnVoltarProduto.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnVoltarProduto.BorderRadius = 15;
-            this.btnVoltarProduto.BorderSize = 0;
-            this.btnVoltarProduto.FlatAppearance.BorderSize = 0;
-            this.btnVoltarProduto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVoltarProduto.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVoltarProduto.ForeColor = System.Drawing.Color.White;
-            this.btnVoltarProduto.Location = new System.Drawing.Point(490, 350);
-            this.btnVoltarProduto.Name = "btnVoltarProduto";
-            this.btnVoltarProduto.Size = new System.Drawing.Size(150, 34);
-            this.btnVoltarProduto.TabIndex = 25;
-            this.btnVoltarProduto.Text = "Voltar";
-            this.btnVoltarProduto.TextColor = System.Drawing.Color.White;
-            this.btnVoltarProduto.UseVisualStyleBackColor = false;
-            this.btnVoltarProduto.Click += new System.EventHandler(this.btnVoltarProduto_Click);
+            this.btnCadastrar.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.btnCadastrar.BackgroundColor = System.Drawing.Color.MediumSeaGreen;
+            this.btnCadastrar.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnCadastrar.BorderRadius = 10;
+            this.btnCadastrar.BorderSize = 0;
+            this.btnCadastrar.FlatAppearance.BorderSize = 0;
+            this.btnCadastrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCadastrar.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCadastrar.ForeColor = System.Drawing.Color.White;
+            this.btnCadastrar.Location = new System.Drawing.Point(15, 351);
+            this.btnCadastrar.Name = "btnCadastrar";
+            this.btnCadastrar.Size = new System.Drawing.Size(137, 33);
+            this.btnCadastrar.TabIndex = 23;
+            this.btnCadastrar.Text = "Cadastrar";
+            this.btnCadastrar.TextColor = System.Drawing.Color.White;
+            this.btnCadastrar.UseVisualStyleBackColor = false;
+            this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
             // 
-            // btnCancelarProduto
+            // btnCancelar
             // 
-            this.btnCancelarProduto.BackColor = System.Drawing.Color.Crimson;
-            this.btnCancelarProduto.BackgroundColor = System.Drawing.Color.Crimson;
-            this.btnCancelarProduto.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnCancelarProduto.BorderRadius = 10;
-            this.btnCancelarProduto.BorderSize = 0;
-            this.btnCancelarProduto.FlatAppearance.BorderSize = 0;
-            this.btnCancelarProduto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancelarProduto.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelarProduto.ForeColor = System.Drawing.Color.White;
-            this.btnCancelarProduto.Location = new System.Drawing.Point(158, 351);
-            this.btnCancelarProduto.Name = "btnCancelarProduto";
-            this.btnCancelarProduto.Size = new System.Drawing.Size(150, 33);
-            this.btnCancelarProduto.TabIndex = 24;
-            this.btnCancelarProduto.Text = "Cancelar";
-            this.btnCancelarProduto.TextColor = System.Drawing.Color.White;
-            this.btnCancelarProduto.UseVisualStyleBackColor = false;
+            this.btnCancelar.BackColor = System.Drawing.Color.Crimson;
+            this.btnCancelar.BackgroundColor = System.Drawing.Color.Crimson;
+            this.btnCancelar.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnCancelar.BorderRadius = 10;
+            this.btnCancelar.BorderSize = 0;
+            this.btnCancelar.FlatAppearance.BorderSize = 0;
+            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelar.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelar.ForeColor = System.Drawing.Color.White;
+            this.btnCancelar.Location = new System.Drawing.Point(158, 351);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(150, 33);
+            this.btnCancelar.TabIndex = 24;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.TextColor = System.Drawing.Color.White;
+            this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
-            // btnCadastrarProduto
+            // btnVoltar
             // 
-            this.btnCadastrarProduto.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.btnCadastrarProduto.BackgroundColor = System.Drawing.Color.MediumSeaGreen;
-            this.btnCadastrarProduto.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnCadastrarProduto.BorderRadius = 10;
-            this.btnCadastrarProduto.BorderSize = 0;
-            this.btnCadastrarProduto.FlatAppearance.BorderSize = 0;
-            this.btnCadastrarProduto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCadastrarProduto.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCadastrarProduto.ForeColor = System.Drawing.Color.White;
-            this.btnCadastrarProduto.Location = new System.Drawing.Point(15, 351);
-            this.btnCadastrarProduto.Name = "btnCadastrarProduto";
-            this.btnCadastrarProduto.Size = new System.Drawing.Size(137, 33);
-            this.btnCadastrarProduto.TabIndex = 23;
-            this.btnCadastrarProduto.Text = "Cadastrar";
-            this.btnCadastrarProduto.TextColor = System.Drawing.Color.White;
-            this.btnCadastrarProduto.UseVisualStyleBackColor = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(455, 150);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(144, 129);
-            this.pictureBox1.TabIndex = 28;
-            this.pictureBox1.TabStop = false;
+            this.btnVoltar.BackColor = System.Drawing.Color.BlueViolet;
+            this.btnVoltar.BackgroundColor = System.Drawing.Color.BlueViolet;
+            this.btnVoltar.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnVoltar.BorderRadius = 15;
+            this.btnVoltar.BorderSize = 0;
+            this.btnVoltar.FlatAppearance.BorderSize = 0;
+            this.btnVoltar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVoltar.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVoltar.ForeColor = System.Drawing.Color.White;
+            this.btnVoltar.Location = new System.Drawing.Point(490, 350);
+            this.btnVoltar.Name = "btnVoltar";
+            this.btnVoltar.Size = new System.Drawing.Size(150, 34);
+            this.btnVoltar.TabIndex = 25;
+            this.btnVoltar.Text = "Voltar";
+            this.btnVoltar.TextColor = System.Drawing.Color.White;
+            this.btnVoltar.UseVisualStyleBackColor = false;
+            this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
             // 
             // UcEstoqueCadastro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.btnCadastrarProduto);
-            this.Controls.Add(this.btnCancelarProduto);
-            this.Controls.Add(this.btnVoltarProduto);
+            this.Controls.Add(this.btnCadastrar);
+            this.Controls.Add(this.btnCancelar);
+            this.Controls.Add(this.btnVoltar);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.Clientes);
             this.Name = "UcEstoqueCadastro";
             this.Size = new System.Drawing.Size(665, 394);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numQuantidade)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -467,23 +468,23 @@
         private System.Windows.Forms.Label Clientes;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtNome;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbCategoria;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.ComboBox cbTamanho;
+        private System.Windows.Forms.ComboBox cbCor;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.NumericUpDown numQuantidade;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtPreco;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtDescricao;
         private System.Windows.Forms.Label label8;
-        private CustomControls.RJControls.RJButton btnCadastrarProduto;
-        private CustomControls.RJControls.RJButton btnCancelarProduto;
-        private CustomControls.RJControls.RJButton btnVoltarProduto;
+        private CustomControls.RJControls.RJButton btnCadastrar;
+        private CustomControls.RJControls.RJButton btnCancelar;
+        private CustomControls.RJControls.RJButton btnVoltar;
         private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
