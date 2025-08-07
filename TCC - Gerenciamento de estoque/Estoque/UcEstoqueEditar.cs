@@ -295,5 +295,14 @@ namespace TCC___Gerenciamento_de_estoque
             txtPreco.Clear();
             txtDescricao.Clear();
         }
+
+        private void btnVoltar_Click(object sender, EventArgs e)
+        {
+            FormMenu formPai = this.FindForm() as FormMenu;
+            if (formPai != null)
+            {
+                formPai.CarregarUserControl(new UcEstoque());
+            }
+        }
     }
 }
