@@ -88,7 +88,6 @@
             this.txtPesquisar.Size = new System.Drawing.Size(192, 23);
             this.txtPesquisar.TabIndex = 10;
             this.txtPesquisar.Tag = "";
-            this.txtPesquisar.Text = "Buscar...";
             this.txtPesquisar.TextChanged += new System.EventHandler(this.txtPesquisar_TextChanged);
             // 
             // pictureBox1
