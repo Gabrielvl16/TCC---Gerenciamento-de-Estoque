@@ -33,10 +33,10 @@
             this.txtPesquisar = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.cmbTamanho = new System.Windows.Forms.ComboBox();
-            this.dgvEstoque = new System.Windows.Forms.DataGridView();
             this.cmbCategoria = new System.Windows.Forms.ComboBox();
             this.btnEditar = new CustomControls.RJControls.RJButton();
             this.btnCadastrar = new CustomControls.RJControls.RJButton();
+            this.dgvEstoque = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEstoque)).BeginInit();
             this.SuspendLayout();
@@ -76,22 +76,16 @@
             // 
             // cmbTamanho
             // 
+            this.cmbTamanho.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbTamanho.FormattingEnabled = true;
             this.cmbTamanho.Location = new System.Drawing.Point(496, 96);
             this.cmbTamanho.Name = "cmbTamanho";
             this.cmbTamanho.Size = new System.Drawing.Size(150, 21);
             this.cmbTamanho.TabIndex = 14;
             // 
-            // dgvEstoque
-            // 
-            this.dgvEstoque.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvEstoque.Location = new System.Drawing.Point(18, 127);
-            this.dgvEstoque.Name = "dgvEstoque";
-            this.dgvEstoque.Size = new System.Drawing.Size(628, 251);
-            this.dgvEstoque.TabIndex = 12;
-            // 
             // cmbCategoria
             // 
+            this.cmbCategoria.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbCategoria.FormattingEnabled = true;
             this.cmbCategoria.Location = new System.Drawing.Point(338, 96);
             this.cmbCategoria.Name = "cmbCategoria";
@@ -138,17 +132,25 @@
             this.btnCadastrar.UseVisualStyleBackColor = false;
             this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
             // 
+            // dgvEstoque
+            // 
+            this.dgvEstoque.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvEstoque.Location = new System.Drawing.Point(18, 126);
+            this.dgvEstoque.Name = "dgvEstoque";
+            this.dgvEstoque.Size = new System.Drawing.Size(628, 254);
+            this.dgvEstoque.TabIndex = 19;
+            // 
             // UcEstoque
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.dgvEstoque);
             this.Controls.Add(this.cmbCategoria);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.txtPesquisar);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.cmbTamanho);
             this.Controls.Add(this.btnCadastrar);
-            this.Controls.Add(this.dgvEstoque);
             this.Controls.Add(this.Clientes);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
@@ -169,7 +171,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ComboBox cmbTamanho;
         private CustomControls.RJControls.RJButton btnCadastrar;
-        private System.Windows.Forms.DataGridView dgvEstoque;
         private System.Windows.Forms.ComboBox cmbCategoria;
+        private System.Windows.Forms.DataGridView dgvEstoque;
     }
 }

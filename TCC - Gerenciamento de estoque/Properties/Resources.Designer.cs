@@ -59,5 +59,25 @@ namespace TCC___Gerenciamento_de_estoque.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap adicionar_imagem__1_ {
+            get {
+                object obj = ResourceManager.GetObject("adicionar_imagem__1_", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap desenvolvimento_de_produto__1_ {
+            get {
+                object obj = ResourceManager.GetObject("desenvolvimento_de_produto__1_", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

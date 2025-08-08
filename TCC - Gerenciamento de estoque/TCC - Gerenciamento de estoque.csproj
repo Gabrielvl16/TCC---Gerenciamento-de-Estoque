@@ -111,6 +111,12 @@
     <Compile Include="FormMenu.Designer.cs">
       <DependentUpon>FormMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="Movimentações\UcMovimentacaoEstoque.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Movimentações\UcMovimentacaoEstoque.Designer.cs">
+      <DependentUpon>UcMovimentacaoEstoque.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
@@ -136,12 +142,6 @@
     </Compile>
     <Compile Include="Estoque\UcEstoqueCadastro.Designer.cs">
       <DependentUpon>UcEstoqueCadastro.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Clientes\UcClientes.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Clientes\UcClientes.Designer.cs">
-      <DependentUpon>UcClientes.cs</DependentUpon>
     </Compile>
     <Compile Include="Estoque\UcEstoque.cs">
       <SubType>UserControl</SubType>
@@ -203,6 +203,9 @@
     <EmbeddedResource Include="FormMenu.resx">
       <DependentUpon>FormMenu.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Movimentações\UcMovimentacaoEstoque.resx">
+      <DependentUpon>UcMovimentacaoEstoque.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
@@ -214,9 +217,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Estoque\UcEstoqueCadastro.resx">
       <DependentUpon>UcEstoqueCadastro.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Clientes\UcClientes.resx">
-      <DependentUpon>UcClientes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Estoque\UcEstoque.resx">
       <DependentUpon>UcEstoque.cs</DependentUpon>
@@ -259,6 +259,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\adicionar-imagem %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\desenvolvimento-de-produto %281%29.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -28,9 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UcEstoqueCadastro));
             this.Clientes = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.picImagemProduto = new System.Windows.Forms.PictureBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.txtDescricao = new System.Windows.Forms.TextBox();
@@ -50,7 +51,7 @@
             this.btnCancelar = new CustomControls.RJControls.RJButton();
             this.btnVoltar = new CustomControls.RJControls.RJButton();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picImagemProduto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numQuantidade)).BeginInit();
             this.SuspendLayout();
             // 
@@ -67,7 +68,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.pictureBox1);
+            this.groupBox1.Controls.Add(this.picImagemProduto);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.txtDescricao);
@@ -83,25 +84,28 @@
             this.groupBox1.Controls.Add(this.cbCategoria);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.txtNome);
-            this.groupBox1.Location = new System.Drawing.Point(9, 45);
+            this.groupBox1.Location = new System.Drawing.Point(12, 45);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(642, 296);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Dados do Produto";
             // 
-            // pictureBox1
+            // picImagemProduto
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(455, 150);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(144, 129);
-            this.pictureBox1.TabIndex = 28;
-            this.pictureBox1.TabStop = false;
+            this.picImagemProduto.Image = ((System.Drawing.Image)(resources.GetObject("picImagemProduto.Image")));
+            this.picImagemProduto.Location = new System.Drawing.Point(318, 150);
+            this.picImagemProduto.Name = "picImagemProduto";
+            this.picImagemProduto.Size = new System.Drawing.Size(144, 129);
+            this.picImagemProduto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picImagemProduto.TabIndex = 28;
+            this.picImagemProduto.TabStop = false;
+            this.picImagemProduto.Click += new System.EventHandler(this.picImagemProduto_Click);
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(455, 134);
+            this.label8.Location = new System.Drawing.Point(315, 134);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(99, 13);
             this.label8.TabIndex = 16;
@@ -127,7 +131,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(529, 42);
+            this.label6.Location = new System.Drawing.Point(9, 84);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(35, 13);
             this.label6.TabIndex = 12;
@@ -135,7 +139,7 @@
             // 
             // txtPreco
             // 
-            this.txtPreco.Location = new System.Drawing.Point(532, 58);
+            this.txtPreco.Location = new System.Drawing.Point(12, 100);
             this.txtPreco.Name = "txtPreco";
             this.txtPreco.Size = new System.Drawing.Size(104, 20);
             this.txtPreco.TabIndex = 11;
@@ -143,7 +147,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(233, 84);
+            this.label5.Location = new System.Drawing.Point(131, 85);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(62, 13);
             this.label5.TabIndex = 10;
@@ -151,7 +155,7 @@
             // 
             // numQuantidade
             // 
-            this.numQuantidade.Location = new System.Drawing.Point(236, 100);
+            this.numQuantidade.Location = new System.Drawing.Point(134, 101);
             this.numQuantidade.Name = "numQuantidade";
             this.numQuantidade.Size = new System.Drawing.Size(135, 20);
             this.numQuantidade.TabIndex = 9;
@@ -161,100 +165,44 @@
             this.cbCor.FormattingEnabled = true;
             this.cbCor.Items.AddRange(new object[] {
             "Branco",
-            "",
-            "",
             "Preto",
-            "",
-            "",
             "Cinza",
-            "",
-            "",
             "Marrom",
-            "",
-            "",
             "Bege",
-            "",
-            "",
             "Azul",
-            "",
-            "",
             "Vermelho",
-            "",
-            "",
             "Verde",
-            "",
-            "",
             "Amarelo",
-            "",
-            "",
             "Laranja",
-            "",
-            "",
             "Roxo",
-            "",
-            "",
             "Rosa",
-            "",
             "Azul Claro",
-            "",
-            "",
             "Azul Escuro",
-            "",
-            "",
             "Verde Claro",
-            "",
-            "",
             "Verde Musgo",
-            "",
-            "",
             "Vermelho Vinho",
-            "",
-            "",
             "Rosa Claro",
-            "",
-            "",
             "Rosa Choque",
-            "",
-            "",
             "Cinza Claro",
-            "",
-            "",
             "Cinza Escuro",
-            "",
-            "",
             "Marrom Café",
-            "",
-            "",
             "Amarelo Mostarda",
-            "",
             "Bege Claro",
-            "",
-            "",
             "Branco Gelo",
-            "",
-            "",
             "Off-white",
-            "",
-            "",
             "Nude",
-            "",
-            "",
             "Caramelo",
-            "",
-            "",
             "Areia",
-            "",
-            "",
             "Chumbo"});
-            this.cbCor.Location = new System.Drawing.Point(6, 100);
+            this.cbCor.Location = new System.Drawing.Point(503, 56);
             this.cbCor.Name = "cbCor";
-            this.cbCor.Size = new System.Drawing.Size(212, 21);
+            this.cbCor.Size = new System.Drawing.Size(127, 21);
             this.cbCor.TabIndex = 8;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 84);
+            this.label4.Location = new System.Drawing.Point(503, 39);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(23, 13);
             this.label4.TabIndex = 7;
@@ -263,7 +211,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(386, 41);
+            this.label3.Location = new System.Drawing.Point(361, 40);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(52, 13);
             this.label3.TabIndex = 5;
@@ -289,15 +237,15 @@
             "48",
             "50",
             "52"});
-            this.cbTamanho.Location = new System.Drawing.Point(389, 57);
+            this.cbTamanho.Location = new System.Drawing.Point(364, 56);
             this.cbTamanho.Name = "cbTamanho";
-            this.cbTamanho.Size = new System.Drawing.Size(121, 21);
+            this.cbTamanho.Size = new System.Drawing.Size(127, 21);
             this.cbTamanho.TabIndex = 4;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(233, 41);
+            this.label2.Location = new System.Drawing.Point(222, 40);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(107, 13);
             this.label2.TabIndex = 3;
@@ -323,54 +271,34 @@
             "Casaco",
             "Blazer",
             "Colete",
-            "",
-            "",
             "Suéter",
             "Pijama",
             "Roupa Íntima",
             "Lingerie",
             "Top",
             "Body",
-            "",
-            "",
             "Kimono",
             "Legging",
-            "",
-            "",
             "Tênis",
-            "",
-            "",
             "Sandália",
             "Chinelo",
-            "",
-            "",
             "Bota",
-            "",
-            "",
             "Meia",
             "Boné",
-            "",
-            "",
             "Touca",
-            "",
-            "",
             "Cachecol",
             "Luva",
-            "",
-            "",
             "Cinto",
-            "",
-            "",
             "Bolsa"});
-            this.cbCategoria.Location = new System.Drawing.Point(236, 57);
+            this.cbCategoria.Location = new System.Drawing.Point(225, 56);
             this.cbCategoria.Name = "cbCategoria";
-            this.cbCategoria.Size = new System.Drawing.Size(135, 21);
+            this.cbCategoria.Size = new System.Drawing.Size(127, 21);
             this.cbCategoria.TabIndex = 2;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 41);
+            this.label1.Location = new System.Drawing.Point(9, 41);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(90, 13);
             this.label1.TabIndex = 1;
@@ -378,9 +306,9 @@
             // 
             // txtNome
             // 
-            this.txtNome.Location = new System.Drawing.Point(6, 57);
+            this.txtNome.Location = new System.Drawing.Point(9, 57);
             this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(212, 20);
+            this.txtNome.Size = new System.Drawing.Size(198, 20);
             this.txtNome.TabIndex = 0;
             // 
             // btnCadastrar
@@ -456,7 +384,7 @@
             this.Size = new System.Drawing.Size(665, 394);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picImagemProduto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numQuantidade)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -485,6 +413,6 @@
         private CustomControls.RJControls.RJButton btnCadastrar;
         private CustomControls.RJControls.RJButton btnCancelar;
         private CustomControls.RJControls.RJButton btnVoltar;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox picImagemProduto;
     }
 }
