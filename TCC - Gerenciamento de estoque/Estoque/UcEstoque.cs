@@ -1,6 +1,7 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
 using System.Data;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace TCC___Gerenciamento_de_estoque
@@ -16,6 +17,13 @@ namespace TCC___Gerenciamento_de_estoque
             CarregarTamanhos();
             CarregarDadosEstoque();
             AdicionarEventos();
+
+            // Placeholder inicial
+            txtPesquisar.Text = "Buscar...";
+            txtPesquisar.ForeColor = Color.White;
+
+            // Resetar DataGridView para estilo padrão
+            ResetarEstiloDataGridView();
         }
 
         private void CarregarCategorias()
@@ -75,11 +83,35 @@ namespace TCC___Gerenciamento_de_estoque
             txtPesquisar.TextChanged += (s, e) => CarregarDadosEstoque();
             cmbCategoria.SelectedIndexChanged += (s, e) => CarregarDadosEstoque();
             cmbTamanho.SelectedIndexChanged += (s, e) => CarregarDadosEstoque();
+
+            txtPesquisar.Enter += TxtPesquisar_Enter;
+            txtPesquisar.Leave += TxtPesquisar_Leave;
+        }
+
+        private void TxtPesquisar_Enter(object sender, EventArgs e)
+        {
+            if (txtPesquisar.Text == "Buscar...")
+            {
+                txtPesquisar.Text = "";
+                txtPesquisar.ForeColor = Color.White;
+            }
+        }
+
+        private void TxtPesquisar_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtPesquisar.Text))
+            {
+                txtPesquisar.Text = "Buscar...";
+                txtPesquisar.ForeColor = Color.White;
+            }
         }
 
         private void CarregarDadosEstoque()
         {
             string nome = txtPesquisar.Text.Trim();
+            if (nome == "Buscar...")
+                nome = "";
+
             string categoria = cmbCategoria.SelectedItem?.ToString() ?? "Todos";
             string tamanho = cmbTamanho.SelectedItem?.ToString() ?? "Todos";
 
@@ -123,6 +155,24 @@ namespace TCC___Gerenciamento_de_estoque
             {
                 conexao.Close();
             }
+        }
+
+        private void ResetarEstiloDataGridView()
+        {
+            dgvEstoque.EnableHeadersVisualStyles = true;
+            dgvEstoque.ColumnHeadersDefaultCellStyle.BackColor = SystemColors.Control;
+            dgvEstoque.ColumnHeadersDefaultCellStyle.ForeColor = SystemColors.ControlText;
+            dgvEstoque.ColumnHeadersDefaultCellStyle.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Regular);
+
+            dgvEstoque.DefaultCellStyle.BackColor = SystemColors.Window;
+            dgvEstoque.DefaultCellStyle.ForeColor = SystemColors.ControlText;
+            dgvEstoque.DefaultCellStyle.SelectionBackColor = SystemColors.Highlight;
+            dgvEstoque.DefaultCellStyle.SelectionForeColor = SystemColors.HighlightText;
+
+            dgvEstoque.RowHeadersVisible = true;
+            dgvEstoque.BorderStyle = BorderStyle.Fixed3D;
+            dgvEstoque.BackgroundColor = SystemColors.Window;
+            dgvEstoque.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Regular);
         }
 
         private void btnCadastrar_Click(object sender, EventArgs e)

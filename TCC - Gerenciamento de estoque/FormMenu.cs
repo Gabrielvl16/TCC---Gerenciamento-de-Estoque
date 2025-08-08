@@ -3,6 +3,7 @@ using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.IO;
 using System.Windows.Forms;
+using TCC___Gerenciamento_de_estoque.Movimentações;
 
 namespace TCC___Gerenciamento_de_estoque
 {
@@ -175,7 +176,7 @@ namespace TCC___Gerenciamento_de_estoque
 
         private void btnClientes_Click(object sender, EventArgs e)
         {
-            CarregarUserControl(new UcClientes());
+            CarregarUserControl(new UcMovimentacaoEstoque());
         }
 
         private void btnFuncionarios_Click(object sender, EventArgs e)
