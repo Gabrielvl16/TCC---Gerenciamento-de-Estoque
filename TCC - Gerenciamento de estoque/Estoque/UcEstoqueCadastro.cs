@@ -25,18 +25,7 @@ namespace TCC___Gerenciamento_de_estoque
         {
             try
             {
-                // Se você adicionou a imagem como recurso no Visual Studio:
-                picImagemProduto.Image = Properties.Resources.adicionar_imagem__1_  ;
-
-                // Se estiver embutido como recurso no assembly, descomente abaixo:
-                /*
-                using (Stream stream = Assembly.GetExecutingAssembly()
-                    .GetManifestResourceStream("TCC___Gerenciamento_de_estoque.Resources.padrao.png"))
-                {
-                    if (stream != null)
-                        picImagemProduto.Image = new Bitmap(stream);
-                }
-                */
+                picImagemProduto.Image = Properties.Resources.adicionar_imagem__1_;
             }
             catch (Exception ex)
             {
@@ -108,14 +97,65 @@ namespace TCC___Gerenciamento_de_estoque
                         cmd.Parameters.AddWithValue("@imagem", imagemProduto);
 
                         cmd.ExecuteNonQuery();
-                        MessageBox.Show("Produto cadastrado com sucesso!");
-                        LimparCampos();
                     }
+
+                    // Obtém o ID do produto recém-cadastrado
+                    int novoId;
+                    using (MySqlCommand cmdId = new MySqlCommand("SELECT LAST_INSERT_ID();", conn))
+                    {
+                        novoId = Convert.ToInt32(cmdId.ExecuteScalar());
+                    }
+
+                    // Gera a nota fiscal em TXT
+                    GerarNotaFiscalTxt(novoId, nome, categoria, tamanho, cor, quantidade, preco, descricao);
+
+                    MessageBox.Show("Produto cadastrado com sucesso!");
+                    LimparCampos();
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Erro ao cadastrar produto: " + ex.Message);
+            }
+        }
+
+        private void GerarNotaFiscalTxt(int produtoId, string nome, string categoria, string tamanho, string cor, int quantidade, decimal precoUnitario, string descricao)
+        {
+            try
+            {
+                string pastaNotas = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "NotasFiscais");
+                if (!Directory.Exists(pastaNotas))
+                    Directory.CreateDirectory(pastaNotas);
+
+                string nomeArquivo = $"NF_{produtoId}_{DateTime.Now:yyyyMMdd_HHmmss}.txt";
+                string caminhoArquivo = Path.Combine(pastaNotas, nomeArquivo);
+
+                decimal total = precoUnitario * quantidade;
+
+                using (StreamWriter sw = new StreamWriter(caminhoArquivo))
+                {
+                    sw.WriteLine("*********** NOTA FISCAL ***********");
+                    sw.WriteLine($"Data de emissão: {DateTime.Now:dd/MM/yyyy HH:mm:ss}");
+                    sw.WriteLine("-----------------------------------");
+                    sw.WriteLine($"ID Produto: {produtoId}");
+                    sw.WriteLine($"Nome: {nome}");
+                    sw.WriteLine($"Categoria: {categoria}");
+                    sw.WriteLine($"Tamanho: {tamanho}");
+                    sw.WriteLine($"Cor: {cor}");
+                    sw.WriteLine($"Quantidade: {quantidade}");
+                    sw.WriteLine($"Preço Unitário: R$ {precoUnitario:F2}");
+                    sw.WriteLine($"Total: R$ {total:F2}");
+                    sw.WriteLine("-----------------------------------");
+                    sw.WriteLine("Descrição:");
+                    sw.WriteLine(descricao);
+                    sw.WriteLine("***********************************");
+                }
+
+                MessageBox.Show($"Nota Fiscal gerada com sucesso!\nLocal: {caminhoArquivo}");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao gerar nota fiscal: " + ex.Message);
             }
         }
 
@@ -144,8 +184,6 @@ namespace TCC___Gerenciamento_de_estoque
             txtDescricao.Clear();
 
             imagemProduto = null;
-
-            // Restaura imagem padrão
             CarregarImagemPadrao();
         }
     }

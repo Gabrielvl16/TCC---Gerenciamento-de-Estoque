@@ -19,14 +19,12 @@ namespace TCC___Gerenciamento_de_estoque
 
             picImagemProduto.Image = Properties.Resources.desenvolvimento_de_produto__1_;
 
-            // Configurar placeholder e evento de pesquisa
             txtPesquisar.ForeColor = Color.White;
             txtPesquisar.Text = "Buscar...";
             txtPesquisar.GotFocus += RemoverPlaceholder;
             txtPesquisar.LostFocus += AdicionarPlaceholder;
             txtPesquisar.TextChanged += BuscarProduto;
 
-            // Eventos de botões
             btnSalvar.Click += BtnSalvar_Click;
             btnCancelar.Click += BtnCancelar_Click;
             picImagemProduto.Click += picImagemProduto_Click;
@@ -168,15 +166,15 @@ namespace TCC___Gerenciamento_de_estoque
             try
             {
                 conexao.Open();
-                string query = @"UPDATE produtos SET 
-                        nome = @nome, 
-                        categoria = @categoria, 
-                        tamanho = @tamanho, 
-                        cor = @cor, 
-                        quantidade = @quantidade, 
-                        preco = @preco, 
-                        descricao = @descricao, 
-                        imagem = @imagem 
+                string query = @"UPDATE produtos SET
+                        nome = @nome,
+                        categoria = @categoria,
+                        tamanho = @tamanho,
+                        cor = @cor,
+                        quantidade = @quantidade,
+                        preco = @preco,
+                        descricao = @descricao,
+                        imagem = @imagem
                         WHERE id = @id";
 
                 MySqlCommand cmd = new MySqlCommand(query, conexao);
@@ -194,7 +192,10 @@ namespace TCC___Gerenciamento_de_estoque
                 MessageBox.Show(resultado > 0 ? "Produto atualizado com sucesso!" : "Nenhuma alteração realizada.");
 
                 if (resultado > 0)
+                {
+                    GerarNotaFiscalTxt(); // <-- NOVO: gera nota fiscal
                     LimparCampos();
+                }
             }
             catch (Exception ex)
             {
@@ -203,6 +204,48 @@ namespace TCC___Gerenciamento_de_estoque
             finally
             {
                 conexao.Close();
+            }
+        }
+
+        private void GerarNotaFiscalTxt()
+        {
+            try
+            {
+                string pastaNotas = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "NotasFiscais");
+                if (!Directory.Exists(pastaNotas))
+                    Directory.CreateDirectory(pastaNotas);
+
+                string nomeArquivo = $"NF_{produtoIdAtual}_{DateTime.Now:yyyyMMdd_HHmmss}.txt";
+                string caminhoArquivo = Path.Combine(pastaNotas, nomeArquivo);
+
+                decimal precoUnitario = decimal.Parse(txtPreco.Text);
+                int quantidade = (int)nudQuantidade.Value;
+                decimal total = precoUnitario * quantidade;
+
+                using (StreamWriter sw = new StreamWriter(caminhoArquivo))
+                {
+                    sw.WriteLine("***** EDIÇÃO DE NOTA FISCAL *****");
+                    sw.WriteLine($"Data de emissão: {DateTime.Now:dd/MM/yyyy HH:mm:ss}");
+                    sw.WriteLine("-----------------------------------");
+                    sw.WriteLine($"ID Produto: {produtoIdAtual}");
+                    sw.WriteLine($"Nome: {txtNome.Text}");
+                    sw.WriteLine($"Categoria: {cmbCategoria.Text}");
+                    sw.WriteLine($"Tamanho: {cmbTamanho.Text}");
+                    sw.WriteLine($"Cor: {cmbCor.Text}");
+                    sw.WriteLine($"Quantidade: {quantidade}");
+                    sw.WriteLine($"Preço Unitário: R$ {precoUnitario:F2}");
+                    sw.WriteLine($"Total: R$ {total:F2}");
+                    sw.WriteLine("-----------------------------------");
+                    sw.WriteLine("Descrição:");
+                    sw.WriteLine(txtDescricao.Text);
+                    sw.WriteLine("**********************************");
+                }
+
+                MessageBox.Show($"Nota Fiscal gerada com sucesso!\nLocal: {caminhoArquivo}");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao gerar nota fiscal: " + ex.Message);
             }
         }
 
@@ -252,6 +295,11 @@ namespace TCC___Gerenciamento_de_estoque
             {
                 formPai.CarregarUserControl(new UcEstoque());
             }
+        }
+
+        private void btnSalvar_Click_1(object sender, EventArgs e)
+        {
+
         }
     }
 }
