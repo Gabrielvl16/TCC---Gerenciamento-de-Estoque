@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Drawing;
 using System.IO;
-using System.Reflection;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 
@@ -16,11 +15,9 @@ namespace TCC___Gerenciamento_de_estoque
             InitializeComponent();
             CarregarImagemPadrao();
 
-            // Adiciona o evento de clique à PictureBox
             picImagemProduto.Click += picImagemProduto_Click;
         }
 
-        // Carrega a imagem padrão na PictureBox
         private void CarregarImagemPadrao()
         {
             try
@@ -48,32 +45,43 @@ namespace TCC___Gerenciamento_de_estoque
 
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
-            string nome = txtNome.Text;
-            string categoria = cbCategoria.Text;
-            string tamanho = cbTamanho.Text;
-            string cor = cbCor.Text;
+            string nome = txtNome.Text.Trim();
+            string categoria = cbCategoria.SelectedItem?.ToString() ?? "";
+            string tamanho = cbTamanho.SelectedItem?.ToString() ?? "";
+            string cor = cbCor.SelectedItem?.ToString() ?? "";
             int quantidade = (int)numQuantidade.Value;
-            string descricao = txtDescricao.Text;
-            string precoTexto = txtPreco.Text.Replace("R$", "").Trim().Replace(",", ".");
+            string precoTexto = txtPreco.Text.Trim().Replace(',', '.');
             decimal preco;
 
-            if (!decimal.TryParse(precoTexto, out preco))
+            if (string.IsNullOrEmpty(nome))
             {
-                MessageBox.Show("Preço inválido.");
+                MessageBox.Show("Informe o nome do produto.");
+                txtNome.Focus();
                 return;
             }
 
-            if (string.IsNullOrWhiteSpace(nome) || string.IsNullOrWhiteSpace(categoria))
+            if (quantidade <= 0)
             {
-                MessageBox.Show("Preencha todos os campos obrigatórios.");
+                MessageBox.Show("A quantidade deve ser maior que zero.");
+                numQuantidade.Focus();
                 return;
             }
 
-            if (imagemProduto == null)
+            if (!decimal.TryParse(precoTexto, System.Globalization.NumberStyles.Any, System.Globalization.CultureInfo.InvariantCulture, out preco))
             {
-                MessageBox.Show("Selecione uma imagem do produto.");
+                MessageBox.Show("Informe um preço válido, use números decimais (ex: 99.90 ou 99,90).");
+                txtPreco.Focus();
                 return;
             }
+
+            if (preco <= 0)
+            {
+                MessageBox.Show("O preço deve ser maior que zero.");
+                txtPreco.Focus();
+                return;
+            }
+
+            string descricao = txtDescricao.Text.Trim();
 
             try
             {
@@ -94,68 +102,46 @@ namespace TCC___Gerenciamento_de_estoque
                         cmd.Parameters.AddWithValue("@quantidade", quantidade);
                         cmd.Parameters.AddWithValue("@preco", preco);
                         cmd.Parameters.AddWithValue("@descricao", descricao);
-                        cmd.Parameters.AddWithValue("@imagem", imagemProduto);
+                        cmd.Parameters.AddWithValue("@imagem", imagemProduto ?? (object)DBNull.Value);
 
                         cmd.ExecuteNonQuery();
                     }
 
-                    // Obtém o ID do produto recém-cadastrado
                     int novoId;
                     using (MySqlCommand cmdId = new MySqlCommand("SELECT LAST_INSERT_ID();", conn))
                     {
                         novoId = Convert.ToInt32(cmdId.ExecuteScalar());
                     }
 
-                    // Gera a nota fiscal em TXT
-                    GerarNotaFiscalTxt(novoId, nome, categoria, tamanho, cor, quantidade, preco, descricao);
+                    // Gera o documento fiscal simulado em PDF (sem "FAKE" no título)
+                    string caminhoPdf = NotaFiscalSimuladaGenerator.GerarNfcePdf(novoId, "Cliente Exemplo", nome, quantidade, preco);
 
-                    MessageBox.Show("Produto cadastrado com sucesso!");
+                    // Salva dados do documento fiscal no banco
+                    string queryNota = "INSERT INTO notas_fiscais (produto_id, numero, chave_acesso, xml, pdf_path, api_response, data_emissao, valor_total) " +
+                                       "VALUES (@produto_id, @numero, @chave, @xml, @pdf, @resp, @dataem, @valor)";
+
+                    using (MySqlCommand cmdNota = new MySqlCommand(queryNota, conn))
+                    {
+                        cmdNota.Parameters.AddWithValue("@produto_id", novoId);
+                        cmdNota.Parameters.AddWithValue("@numero", DBNull.Value);
+                        cmdNota.Parameters.AddWithValue("@chave", DBNull.Value);
+                        cmdNota.Parameters.AddWithValue("@xml", DBNull.Value);
+                        cmdNota.Parameters.AddWithValue("@pdf", caminhoPdf);
+                        cmdNota.Parameters.AddWithValue("@resp", "Simulação: documento fiscal gerado localmente, sem API.");
+                        cmdNota.Parameters.AddWithValue("@dataem", DateTime.Now);
+                        cmdNota.Parameters.AddWithValue("@valor", quantidade * preco);
+
+                        cmdNota.ExecuteNonQuery();
+                    }
+
+                    // NÃO mostra mensagem para o usuário aqui, conforme pedido
+
                     LimparCampos();
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Erro ao cadastrar produto: " + ex.Message);
-            }
-        }
-
-        private void GerarNotaFiscalTxt(int produtoId, string nome, string categoria, string tamanho, string cor, int quantidade, decimal precoUnitario, string descricao)
-        {
-            try
-            {
-                string pastaNotas = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "NotasFiscais");
-                if (!Directory.Exists(pastaNotas))
-                    Directory.CreateDirectory(pastaNotas);
-
-                string nomeArquivo = $"NF_{produtoId}_{DateTime.Now:yyyyMMdd_HHmmss}.txt";
-                string caminhoArquivo = Path.Combine(pastaNotas, nomeArquivo);
-
-                decimal total = precoUnitario * quantidade;
-
-                using (StreamWriter sw = new StreamWriter(caminhoArquivo))
-                {
-                    sw.WriteLine("*********** NOTA FISCAL ***********");
-                    sw.WriteLine($"Data de emissão: {DateTime.Now:dd/MM/yyyy HH:mm:ss}");
-                    sw.WriteLine("-----------------------------------");
-                    sw.WriteLine($"ID Produto: {produtoId}");
-                    sw.WriteLine($"Nome: {nome}");
-                    sw.WriteLine($"Categoria: {categoria}");
-                    sw.WriteLine($"Tamanho: {tamanho}");
-                    sw.WriteLine($"Cor: {cor}");
-                    sw.WriteLine($"Quantidade: {quantidade}");
-                    sw.WriteLine($"Preço Unitário: R$ {precoUnitario:F2}");
-                    sw.WriteLine($"Total: R$ {total:F2}");
-                    sw.WriteLine("-----------------------------------");
-                    sw.WriteLine("Descrição:");
-                    sw.WriteLine(descricao);
-                    sw.WriteLine("***********************************");
-                }
-
-                MessageBox.Show($"Nota Fiscal gerada com sucesso!\nLocal: {caminhoArquivo}");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Erro ao gerar nota fiscal: " + ex.Message);
             }
         }
 
